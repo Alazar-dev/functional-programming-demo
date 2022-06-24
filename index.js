@@ -22,9 +22,10 @@ function getTodoByIndex(index) {
 }
 
 function editTodo(index, title, due_date) {
-    let todo = getTodoByIndex(index);
-    todo.title = title;
-    todo.due_date = due_date;
+   return (
+       getTodoByIndex(index).title = title,
+       getTodoByIndex(index).due_date = due_date
+   )
 }
 
 function deleteTodo(index) {
@@ -32,7 +33,5 @@ function deleteTodo(index) {
 }
 
 function completeTodo(index) {
-    let todo = getTodoByIndex(index);
-    return todo.completed = true;
+    return getTodoByIndex(index).completed = true;
 }
-
