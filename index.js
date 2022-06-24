@@ -4,6 +4,12 @@ let todos = [
         completed: false,
         due_date: 'Jue 12',
         published_at: "2022-06-23T13:28:22.026Z"
+    },
+    {
+        title: '2nd title',
+        completed: false,
+        due_date: '2nd date',
+        published_at: "new published_at date"
     }
 ]
 
@@ -17,4 +23,9 @@ function editTodo(index, title, due_date) {
     todo.due_date = due_date;
 }
 
-editTodo(0, "edited title", "Nov 7");
+function deleteTodo(index) {
+    let todo = todos[index];
+    let newTodo = todos.filter(a=> a !== todo)
+    console.log("newTodo", newTodo);
+}
+
