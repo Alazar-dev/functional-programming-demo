@@ -14,18 +14,25 @@ let todos = [
 ]
 
 function addTodo(title, due_date) {
-    return todos.push({title: title, completed: false, due_date: due_date, published_at: new Date(), })
+    return todos.push({title: title, completed: false, due_date: due_date, published_at: new Date()})
+}
+
+function getTodoByIndex(index) {
+    return todos[index]
 }
 
 function editTodo(index, title, due_date) {
-    let todo = todos[index];
+    let todo = getTodoByIndex(index);
     todo.title = title;
     todo.due_date = due_date;
 }
 
 function deleteTodo(index) {
-    let todo = todos[index];
-    let newTodo = todos.filter(a=> a !== todo)
-    console.log("newTodo", newTodo);
+    return todos = todos.filter(a=> a !== getTodoByIndex(index));
+}
+
+function completeTodo(index) {
+    let todo = getTodoByIndex(index);
+    return todo.completed = true;
 }
 
